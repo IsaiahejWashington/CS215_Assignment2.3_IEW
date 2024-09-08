@@ -1,0 +1,19 @@
+public class Node<T> {
+
+	public Node<T> nextNode;
+
+	public void setData(int i) {
+		
+		
+	}
+
+	public String getData() {
+		
+		return null;
+	}
+	
+	
+		
+	
+
+}//end cla
