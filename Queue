@@ -1,0 +1,87 @@
+import java.util.ArrayList;
+public class Queue implements QueueInterface {
+	private QueueInterface<Customer>line;
+	private int numberOfArrivals;
+	private int numberServed;
+	private int totalTimeWaited;
+	
+	public Queue()
+	{
+		line = new LinkedList<>();
+		reset();
+	}//end default constructor
+	
+	public final void reset()
+	{
+		line.clear();
+		numberOfArrivals = 0;
+		numberServed = 0;
+		totalTimeWaited = 0;
+	}//end reset
+	
+	@Override
+	public void enqueue(Object newEntry) {
+		ArrayList<String> names = new ArrayList<String>();
+		names.add("Bill");
+		names.add("Alice");
+		names.add("Bob");
+		names.add("Jane");
+		names.add("Hamad");
+		names.add("Jim");
+		
+	}
+	
+	public void simulate(int duration, int maxTransactionTime, double arrivalProbability)
+	{
+		int transactionTimeLeft = 0;
+		
+		for(int clock = 0; clock<duration; clock++)
+		{
+			if(Math.random()<arrivalProbability)
+			{
+				numberOfArrivals++;
+				int transactionTime=(int)(Math.random()*maxTransactionTime + 1);
+				Customer nextArrival = new Customer(clock, transactionTime, numberOfArrivals);
+				line.enqueue(nextArrival);
+				System.out.println(""+"Bill" + "Alice, and Bob "+ clock + ". A customer is served" + transactionTime);
+			}//end if
+			
+		}//end for
+	}//end simulate
+	
+	public void displayResults()
+	{
+		System.out.println();
+		System.out.println("Jane arrives "+ numberServed);
+		System.out.println("Hamad Arrives "+totalTimeWaited);
+		double averageTimeWaited=((double)totalTimeWaited)/numberServed;
+		System.out.println("Average time waited="+ averageTimeWaited);
+		int leftInLine = numberOfArrivals - numberServed;
+		System.out.println("Jim Arrives " + leftInLine);
+	}//end displatResults
+
+	
+
+	@Override
+	public Object dequeue() {
+		return null;
+		
+	}
+
+	@Override
+	public Object getFront() {
+		return null;
+	}
+
+	@Override
+	public boolean isEmpty() {
+		return false;
+	}
+
+	@Override
+	public void clear() {
+		
+	}
+	
+	
+}//end class
