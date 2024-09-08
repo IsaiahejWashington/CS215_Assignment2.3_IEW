@@ -37,7 +37,7 @@ public class LinkedList<T> extends Queue {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		LinkedList<Integer> myList=new LinkedList<>();
 		
 		Node<Integer> aNode=new Node<>();
@@ -58,21 +58,7 @@ public class LinkedList<T> extends Queue {
 		
 
 	}
-	@Override
-	public void enqueue(Object newEntry) {
-		
-	}
-	@Override
-	public Object dequeue() {
-		return null;
-	}
-	@Override
-	public Object getFront() {
-		return null;
-	}
-	@Override
-	public void clear() {
-		
-	}
 
 }
+
+
