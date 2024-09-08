@@ -1,0 +1,27 @@
+
+
+public class Customer<T> {
+	
+	String  Customer;
+	private int clock;
+	private int transactionTime;
+	private int numberOfArrivals;
+
+	public Customer(int clock, int transactionTime, int numberOfArrivals) {
+		Customer = "";
+	}
+
+	public int getTransactionTime() {
+		return 0;
+	}
+
+	public int getArrivalTime() {
+		return 0;
+	}
+
+	public String getCustomerNumber() {
+		return null;
+	}
+	
+	
+}
